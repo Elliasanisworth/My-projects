@@ -6,6 +6,10 @@ body{
     background-color: #4C5A4A;
     text-align: center;
 }
+.nav{
+    color: whitesmoke;
+    background-color:#354732 ;
+}
 h1{
     font-size: 10vmin;
 }
