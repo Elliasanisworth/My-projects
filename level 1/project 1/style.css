@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body, main {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+.navbar, .navbar-left, .navbar-right, .navbar-mid {
+    display: flex;
+    align-items: center;
+}
+.navbar {
+    height: 100px;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    color: black;
+    animation: fadeIn 1.5s ease-in-out 0.5s forwards;
+}
+.navbar-left, .navbar-right {
+    justify-content: center;
+    gap: 5px;
+}
+i, .menu, .login, .signup {
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+i {
+    padding: 7px;
+    border-radius: 50%;
+    animation: rotateIn 1s ease-in-out 0.5s forwards;
+}
+.menu {
+    background-color: transparent;
+    color: black;
+    font-weight: 600;
+}
+.login {
+    background-color: transparent;
+    cursor: pointer;
+}
+.signup {
+    background: rgb(242, 90, 35);
+    color: white;
+    cursor: pointer;
+}
+#main-bdy, h2 {
+    font-size: 150px;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    animation: zoomIn 1.5s ease-in-out 1s forwards;
+}
+img {
+    height: 420px;
+    width: 370px;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8) rotate(-30deg); /* Initial scale and rotation */
+    border-radius: 20px;
+    opacity: 0;
+    animation: stackAndRotate 1.5s ease-in-out 1.5s forwards, fadeInOpacity 1s ease-in-out 1.5s forwards;
+}
+#img1 { transform: translate(-50%, -50%) rotate(-30deg) scale(1); }
+#btm-left, #btm-right {
+    position: absolute;
+    bottom: 5%;
+    font-size: 17px;
+    opacity: 0;
+}
+#btm-left {
+    left: 3%;
+    animation: fadeInUp 1.5s ease-in-out 2s forwards;
+}
+#btm-right {
+    right: 3%;
+    gap: 2px;
+    display: flex;
+    align-items: center;
+    animation: fadeInUp 1.5s ease-in-out 2s forwards;
+}
+#right { margin-top: 5px; }
+.login:hover {
+    background-color: rgb(242, 90, 35);
+    color: white;
+    transform: scale(1.1);
+}
+.signup:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes rotateIn {
+    from { transform: rotate(-360deg); }
+    to { transform: rotate(0); }
+}
+@keyframes zoomIn {
+    from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+@keyframes stackAndRotate {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8) rotate(-30deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+@keyframes fadeInOpacity {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
