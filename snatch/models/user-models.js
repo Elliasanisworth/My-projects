@@ -1,4 +1,4 @@
-const mongoose = reqiure('mongoose');
+const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
    fullname: {
@@ -12,7 +12,7 @@ const userSchema = mongoose.Schema({
     type: Array,
     default: []
    },
-   isadmin: Boolean,
+   
    order:{
     type: Array,
     default: []
