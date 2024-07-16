@@ -13,3 +13,12 @@
 .shader{
     background: linear-gradient(to right bottom, #69628a, #040309);
 }
+.populars-container {
+    padding-bottom: 8rem; /* Adjust this value to ensure enough space for the footer */
+}
+
+.main-container {
+    margin-bottom: 4rem; /* Ensure footer doesn't overlap the content */
+}
+
+ 

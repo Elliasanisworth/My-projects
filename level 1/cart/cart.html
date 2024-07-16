@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <h1 class="text-xl font-semibold">Your Shopping Cart</h1>
+            <button class="bg-yellow-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-yellow-600 transition-colors">Checkout</button>
+        </div>
+    </header>
+
+    <!-- Cart Items -->
+    <main class="container mx-auto mt-8 flex-1">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Item 1 -->
+            <div class="bg-white p-4 shadow-md rounded-lg flex items-center">
+                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-20 h-20 object-cover rounded-lg">
+                <div class="ml-4 flex-1">
+                    <h2 class="text-lg font-semibold">Product Name</h2>
+                    <p class="text-gray-500 mt-1">Price: $49.99</p>
+                    <div class="mt-2">
+                        <label for="quantity" class="block text-sm">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" class="border-gray-300 border rounded-md px-3 py-2 mt-1 w-20 focus:outline-none focus:border-yellow-500">
+                    </div>
+                </div>
+                <button class="text-red-500 hover:text-red-700 ml-4"><i class="ri-delete-bin-line text-xl"></i></button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="bg-white p-4 shadow-md rounded-lg flex items-center">
+                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-20 h-20 object-cover rounded-lg">
+                <div class="ml-4 flex-1">
+                    <h2 class="text-lg font-semibold">Another Product</h2>
+                    <p class="text-gray-500 mt-1">Price: $29.99</p>
+                    <div class="mt-2">
+                        <label for="quantity" class="block text-sm">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" class="border-gray-300 border rounded-md px-3 py-2 mt-1 w-20 focus:outline-none focus:border-yellow-500">
+                    </div>
+                </div>
+                <button class="text-red-500 hover:text-red-700 ml-4"><i class="ri-delete-bin-line text-xl"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Summary -->
+    <div class="bg-white p-4 shadow-md rounded-lg mt-8 mx-4 md:mx-auto md:w-1/2">
+        <h2 class="text-lg font-semibold">Summary</h2>
+        <div class="mt-4">
+            <p class="flex justify-between"><span>Subtotal:</span> <span>$79.98</span></p>
+            <p class="flex justify-between"><span>Shipping:</span> <span>$0.00</span></p>
+            <hr class="my-2">
+            <p class="flex justify-between"><span>Total:</span> <span class="text-yellow-500">$79.98</span></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white p-4 shadow-md mt-8">
+        <div class="container mx-auto flex justify-center items-center">
+            <p class="text-gray-500">&copy; 2024 Chairs. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
