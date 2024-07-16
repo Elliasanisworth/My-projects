@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const ownerModels = require("../models/owner-model");
 const ownerModel = require('../models/owner-model');
+const productModel = require("../models/product-model")
 
-if(process.env.NODE_ENV === "development"){
+if(process.env.NODE_ENV==="development"){
     router.post("/create", async function(req, res) {
         try{
         let owners = await ownerModel.find();
         if (owners.length > 0) { return res.status(503).send("you don't have permission for it.");
         }
         let {fullname, email, password} = req.body;
+
         let createdOwner = await ownerModel.create({
             fullname,
             email,
@@ -23,11 +24,10 @@ if(process.env.NODE_ENV === "development"){
      });
 };
 
-router.get("/adminPanel", function(req, res){
-    try {
-        res.render("createproducts");
-    } catch (error) {
-        next(err);
-    }
-});
+
+router.get("/admin", function(req, res){
+  let success = req.flash("success")
+    res.render("createproduct", { success });
+})
+
 module.exports = router;

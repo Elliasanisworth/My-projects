@@ -7,10 +7,10 @@ const flash = require("connect-flash");
 
 require("dotenv").config();
 
-const ownerRouter = require("./routes/ownerRouter");
-const userRouter = require("./routes/userRouter");
-const productRouter = require("./routes/productRouter");
 const indexRouter = require("./routes/index");
+const ownerRouter = require("./routes/ownerRouter");
+const productRouter = require("./routes/productRouter");
+const userRouter = require("./routes/userRouter");
 
 const db  =  require("./config/mongoose-connection");
  
@@ -33,12 +33,4 @@ app.use("/owner", ownerRouter);
 app.use("/users", userRouter);
 app.use("/product", productRouter);
 
-app.use((err, req, res,next) => {
-    console.error(err.stack);
-    res.status(500).send("something went wrong!");
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log('server is running an port 3000')
-});
+app.listen(3000);

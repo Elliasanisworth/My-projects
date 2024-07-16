@@ -10,7 +10,7 @@ const {genratetoken} = require("../utils/genratetoken");
     let user = await usermodel.findOne({email: email});
    
     if (user){ 
-        return res.status(401).send("An account already exists. Please Login ")     
+        return res.status(401).redirect("/")     
     }
      bcrypt.genSalt(10, function(err, salt){
         if(err){
@@ -30,7 +30,7 @@ const {genratetoken} = require("../utils/genratetoken");
                 });
                 let token = genratetoken(user);    
                 res.cookie("token", token)
-                res.send("account is created");
+                res.redirect("/shop");
             }catch (createError) {
                 console.error("error creating user", createError);
                 res.status(500).send("error creating user");
@@ -42,7 +42,7 @@ const {genratetoken} = require("../utils/genratetoken");
         console.error("error in resgisteruser:", err);
      res.send(err.message);
     }
- }
+ };
 
  module.exports.loginUser = async function(req, res) {
     try{
@@ -57,7 +57,7 @@ const {genratetoken} = require("../utils/genratetoken");
         if (result) {
             let token = genratetoken(user);
             res.cookie("token", token);
-            res.send("you can login");
+            res.redirect("/shop");
         }else {
             console.log("email or password is incorrect");
             return res.send("email or password is incorret");
@@ -67,9 +67,9 @@ const {genratetoken} = require("../utils/genratetoken");
     console.error("error in loginuser:", err);
     res.send(err.message);
   }
-}
+};
 
  module.exports.logout = async function(req, res) {
     res.cookie("token", " ");
     res.redirect("/");
- }
+ };

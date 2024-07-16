@@ -12,8 +12,8 @@ const ownerSchema = mongoose.Schema({
     type: Array,
     default: []
    },
-  gstin: String,
    picture: String,
+   gstin: String,
 });
 
 module.exports = mongoose.model("owner", ownerSchema);
