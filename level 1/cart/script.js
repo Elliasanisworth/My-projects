@@ -84,4 +84,3 @@ const addToCartButtons = document.querySelectorAll('.product ');
 
 
 addProduct();
-showPopup();
