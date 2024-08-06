@@ -1,31 +1,68 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
 }
-html,body{
+
+html, body {
     width: 100%;
     height: 100%;
 }
-#main{
-    display:flex;
+
+#main {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: rgb(155,184,155);
+    background-color: rgb(155, 184, 155);
+    position: relative;
 }
-#panel{
+
+#heading-container {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    background-color: rgb(72, 104, 72);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.exit-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #D64550;
+    color: aliceblue;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.exit-button:hover {
+    background-color: #A8323E;
+    transform: scale(1.05);
+}
+
+#panel {
     display: flex;
     flex-direction: column;
     overflow: hidden;
     width: 80%;
-    height: 90%;
+    height: 80%;
     background-color: #fff;
     border-radius: 8px;
 }
-#ptop{
+
+#ptop {
     padding: 0px 25%;
     justify-content: space-between;
     color: #fff;
@@ -35,24 +72,28 @@ html,body{
     height: 100px;
     background-color: rgb(72, 104, 72);
 }
-.elem{
+
+.elem {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.elem h3{
+
+.elem h3 {
     font-weight: 500;
     font-size: 17px;
 }
-.box{
-    color: rgb(18,119,57);
+
+.box {
+    color: rgb(18, 119, 57);
     font-weight: 600;
     font-size: 22px;
     padding: 8px 10px;
     background-color: #fff;
     border-radius: 3px;
 }
-#pbtm{
+
+#pbtm {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,9 +101,9 @@ html,body{
     gap: 9px;
     width: 100%;
     height: calc(100% - 100px); 
-      
 }
-.bubble{
+
+.bubble {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,29 +113,35 @@ html,body{
     color: #fff;
     border-radius: 50%;
 }
-.bubble:hover{
+
+.bubble:hover {
     cursor: pointer;
     background-color: rgb(50, 75, 50);
 }
-.gameover{
+
+.gameover {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 35px;
     font-weight: 500;
-    width:200px ;
+    width: 200px;
     height: 100px;
     background: rgb(72, 104, 72);
     color: #fff;
     border-radius: 10px;
 }
 
-.gameover:hover{
+.gameover:hover {
     background-color: rgb(50, 75, 50);
 }
-.gameover::after{
-    content:" Game Over";
+
+.gameover::after {
+    content: " Game Over";
 }
-.gameover:hover::after{
-    content:"Start Game";
+
+.gameover:hover::after {
+    content: "Start Game";
 }
+
+

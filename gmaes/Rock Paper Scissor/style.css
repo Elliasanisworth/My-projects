@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #081b31;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.back-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #D64550;
+  color: aliceblue;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-button:hover {
+  background-color: #A8323E;
+  transform: scale(1.05);
+}
+
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.choice {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.choice:hover {
+  cursor: pointer;
+  background-color: #081b31;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.choice img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  gap: 3rem;
+}
+
+.score {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 100px;
+  text-align: center;
+}
+
+.score p:first-child {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.score p:last-child {
+  margin: 0;
+}
+
+.msg-container {
+  margin-top: 3rem;
+}
+
+#msg {
+  background-color: #081b31;
+  color: #fff;
+  font-size: 1.5rem;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+

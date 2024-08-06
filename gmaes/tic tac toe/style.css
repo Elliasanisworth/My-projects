@@ -1,38 +1,72 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #4C5A4A;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
-.nav{
+
+.nav {
     color: whitesmoke;
-    background-color:#354732 ;
+    background-color: #354732;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
-h1{
+
+h1 {
     font-size: 10vmin;
+    margin: 0;
 }
-#new-btn{
+
+.back-button {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #D64550;
+    color: aliceblue;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-button:hover {
+    background-color: #A8323E;
+    transform: scale(1.05);
+}
+
+#new-btn {
     padding: 1rem;
     font-size: 1.25rem;
     background-color: #64735C;
     color: aliceblue;
     border-radius: 1rem;
     border: none;
+    transition: background-color 0.3s, transform 0.3s;
 }
-#msg{
+
+#new-btn:hover {
+    background-color: #526048;
+    transform: scale(1.05);
+}
+
+#msg {
     color: whitesmoke;
     font-size: 6vmin;
 }
-.container{
+
+.container {
     height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-.game{
+
+.game {
     width: 60vmin;
     height: 60vmin;
     display: flex;
@@ -41,7 +75,8 @@ h1{
     align-items: center;
     gap: 1vmin;
 }
-#box{
+
+.box {
     height: 18vmin;
     width: 18vmin;
     border-radius: 1rem;
@@ -50,16 +85,29 @@ h1{
     font-size: 8vmin;
     color: #E0726F;
     background-color: #E2C7A0;
+    transition: transform 0.3s;
 }
-.reset{
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.reset {
     padding: 1rem;
     font-size: 1.25rem;
     background-color: #D64550;
     color: aliceblue;
     border-radius: 1rem;
     border: none;
+    transition: background-color 0.3s, transform 0.3s;
 }
-.msg-container{
+
+.reset:hover {
+    background-color: #A8323E;
+    transform: scale(1.05);
+}
+
+.msg-container {
     height: 90vmin;
     display: flex;
     justify-content: center;
@@ -67,6 +115,7 @@ h1{
     flex-direction: column;
     gap: 2rem;
 }
-.hide{
+
+.hide {
     display: none;
 }
