@@ -15,7 +15,13 @@ import snake from '../../assets/viper/snake.png'
 import poison from '../../assets/viper/poison.png'
 import pit from '../../assets/viper/pit.jpg' 
 
-import jett from '../../assets/'
+import jett from '../../assets/jett/jett.png'
+import updraft from '../../assets/jett/updraft.png'
+import tailwind from '../../assets/jett/tailwind.png'
+import cloundburst from '../../assets/jett/cloudburst.png'
+import bladestorm from '../../assets/jett/bladestorm.png'
+
+import sova from '../../assets/sova/sova.jpg'
 
 const agentContent = {
     omen: {
@@ -49,11 +55,12 @@ const agentContent = {
         role: 'Duelist',
         description: 'Jett is a nimble and agile duelist who excels at quick, unpredictable movements. She uses her speed and acrobatics to outmaneuver enemies and deal high damage.',
         icon: Duelist,
+        pic: jett,
         attribute: [
-            { imgSrc: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_de8544e323a51c9b8ff7ae8fca257e038a570819d-128x128.png", key: "q" },
-            { imgSrc: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_de4012aeda506a8e77f2e83d48aa8c5c73a37b659-128x128.png", key: "e" },
-            { imgSrc: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_d2790998724c94f38688c9c6c5d43c0712cae18ef-128x128.png", key: "c" },
-            { imgSrc: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_dfed58cd5eb95f4e50b7b8230a150c3b686b82f78-128x128.png?auto=format&fit=crop&q=80&h=97&wcrop=center", key: "x" }
+            { imgSrc:updraft, key: "q" },
+            { imgSrc:tailwind, key: "e" },
+            { imgSrc:cloundburst, key: "c" },
+            { imgSrc: bladestorm, key: "x" }
         ]
     },
     sova: {
@@ -61,6 +68,7 @@ const agentContent = {
         role: 'Initiator',
         description: 'Sova is a master of reconnaissance and tracking. With his bow and arrow, he can reveal enemies’ positions and gain valuable intel to guide his team.',
         icon: Initiator,
+        pic:sova,
         attribute: [
             { imgSrc: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_de8544e323a51c9b8ff7ae8fca257e038a570819d-128x128.png", key: "q" },
             { imgSrc: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_de4012aeda506a8e77f2e83d48aa8c5c73a37b659-128x128.png", key: "e" },

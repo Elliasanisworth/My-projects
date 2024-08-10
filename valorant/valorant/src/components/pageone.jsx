@@ -57,7 +57,7 @@ function Navbar() {
                     "https://i.pinimg.com/474x/60/3d/d5/603dd5d1d062dface6c8715d35046dd0.jpg",
                     "https://i.pinimg.com/474x/ff/08/31/ff0831df462a32343005bc0cc78b30a2.jpg",
                     "https://i.pinimg.com/474x/20/fe/1a/20fe1ab17bc4177b1b60e19d7e163c0e.jpg",
-                    "https://i.pinimg.com/474x/6e/2e/ab/6e2eab1f214c9d99c16175bd61cb026f.jpg"].map((src, index) => (
+                    "https://i.pinimg.com/474x/a6/ff/4d/a6ff4d811148d4e60ec1c368baba56d8.jpg"].map((src, index) => (
                     <div key={index} 
                     className={`notched w-16 h-16  rounded-md overflow-hidden ${activeAgent === index ? 'opacity-50' : 'bgopacity-100 '}`}
                     onClick={() => handleImageClick(index)}
