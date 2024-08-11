@@ -32,13 +32,13 @@ function Navbar() {
     };
 
     return (
-        <div className='w-full h-screen overflow-hidden'>
+        <div className='w-full h-screen overflow-hidden '>
             <img
-                className='fixed w-full h-screen opacity-45 -z-10 bg-gray-800'
-                src="https://i.pinimg.com/474x/e6/db/f3/e6dbf31926af9e9845b8b9406510297e.jpg"
+                className='fixed w-full h-screen  object-cover -z-10 '
+                src={activeAgent ? agentContent[activeAgent].bg : 'https://i.pinimg.com/564x/f3/1a/b5/f31ab553b191d9f43af61454eaf703bd.jpg'}
                 alt=""
             />
-            <nav id='nav1' className='fixed flex items-center justify-between py-10 px-4 backdrop-blur-md text-[#111] w-full h-[60px]'>
+            <nav id='nav1' className='fixed flex items-center justify-between py-10 px-4 backdrop-blur-sm text-[#fff] w-full h-[60px]'>
                 <div className='logo w-12 h-12 ml-14'>
                     <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHduDerNAj2WnK3pD3v9VyLqU1bxVHdJBy_Q&s"
@@ -68,22 +68,22 @@ function Navbar() {
             </div>
             <div className='w-[93vw] h-[90vh] flex'>
                 <div id="main" className="relative h-screen w-[60vh] ml-[11vw] p-5 flex items-center justify-center overflow-hidden">
-                    <img className='absolute inset-0 mt-10 w-[65vh] z-10 object-cover' src={activeAgent ? agentContent[activeAgent].pic :''} alt="" />
+                    <img className='absolute inset-0 mt-10 w-[65vh] z-10 h-full object-cover ' src={activeAgent ? agentContent[activeAgent].pic :''} alt="" />
                     <h1 className="text-[calc(100vh/3)] opacity-75 leading-tighter uppercase transform -rotate-90 origin-center  text-center font-extrabold">
                     {activeAgent ? agentContent[activeAgent].title :''}
                     </h1>
                 </div>
                 <div id='about' className='w-1/3 h-[80vh] mt-[12vh] ml-[12vw] mr-[8vw] bg-[rgba(174,174,176,0.4)] uppercase py-10 px-8'>                    
                     <span className='text-2xl leading-none tracking-widest'>{activeAgent ? agentContent[activeAgent].role : ''}</span><h1 className='text-7xl font-[900]'>{activeAgent ? agentContent[activeAgent].title :''}</h1><div className='border-2 border-white p-3 bg-[rgba(121,118,131,0.7)] flex flex-row mt-8'>
-                            <div className='w-[22vw] h-[58px] mr-5 overflow-hidden rounded-full '>
+                            <div className='w-[22vw] h-[61px] mr-4 overflow-hidden rounded-full '>
                                 <img
-                                    className='w-full h-full '
-                                     src={activeAgent ? agentContent[activeAgent].icon : ''} alt="" />
+                                    className='w-full h-full text-3xl text-center '
+                                     src={activeAgent ? agentContent[activeAgent].icon : ''} alt="select agent to view" />
                             </div>
                             <div id='info'>
                                 <h1 className='font-semibold tracking-wide py-1'>{activeAgent ? agentContent[activeAgent].title : ''}</h1>
                                 <p className='tracking-tight'>
-                                    {activeAgent?agentContent[activeAgent].description : ''}
+                                    {activeAgent?agentContent[activeAgent].description : '' }
                                 </p>
                             </div>
                         </div>
@@ -99,6 +99,7 @@ function Navbar() {
                                 </div>
                             </div>
                         )): null}
+                        <button className=' absolute top-[80vh] h-16 w-[20vw] bg-[rgba(121,118,131,0.6)] border-2 border-white uppercase italic'>view contract</button>
                     </div>
                 </div>
             </div>
