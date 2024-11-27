@@ -1,30 +1,62 @@
 import React, { useState } from "react";
-import Chessboard from "chessboardjsx";  // You can install chessboardjsx or use a custom board.
+import * as ChessJS from "chess.js";
+import { Chessboard } from "react-chessboard";
 
-const Chess = () => {
+const Chess = typeof ChessJS === "function" ? ChessJS : ChessJS.Chess;
+
+const ChessGame = () => {
   const [game, setGame] = useState(new Chess());
-  const [gameOver, setGameOver] = useState(false);
 
   const makeMove = (move) => {
-    const newGame = { ...game };
-    newGame.ugly_move(move);
-    setGame(newGame);
-    setGameOver(newGame.game_over());
+    const gameCopy = new Chess(game.fen());
+    const result = gameCopy.move(move);
+    if (result) {
+      setGame(gameCopy);
+    }
+    return result;
+  };
+
+  const onDrop = (sourceSquare, targetSquare) => {
+    const move = makeMove({
+      from: sourceSquare,
+      to: targetSquare,
+      promotion: "q", // Always promote to a queen
+    });
+
+    if (move === null) return false; // Illegal move
+    setTimeout(() => makeAIMove(), 500); // AI moves after 500ms
+    return true;
+  };
+
+  const makeAIMove = () => {
+    const possibleMoves = game.moves();
+    if (possibleMoves.length === 0) return; // Game over
+
+    const randomMove =
+      possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
+    game.move(randomMove);
+    setGame(new Chess(game.fen()));
+  };
+
+  const resetGame = () => {
+    setGame(new Chess());
   };
 
   return (
-    <div className="game-container">
-      <h1 className="text-2xl font-bold mb-4">Chess Game</h1>
-      <div className="mb-4">
+    <div className="chessboard-container">
+      <h1>Chess Game</h1>
+      <div className="chessboard">
         <Chessboard
           position={game.fen()}
-          onDrop={(move) => makeMove(move)}
-          width={400}
+          onPieceDrop={onDrop}
+          boardWidth={600} // Chessboard size
         />
       </div>
-      {gameOver && <div className="game-over text-xl text-red-600">Game Over</div>}
+      <button onClick={resetGame} className="reset-button">
+        Restart Game
+      </button>
     </div>
   );
 };
 
-export default Chess;
+export default ChessGame;
