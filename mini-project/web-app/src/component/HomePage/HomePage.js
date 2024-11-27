@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './navbar';
 import HeroSection from './HeroSection';
-import CTASection from './CTASection';
+// import CTASection from './CTASection';
 import Footer from './Footer';
 
 const HomePage = () => {

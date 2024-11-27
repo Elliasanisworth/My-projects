@@ -6,6 +6,8 @@ const features = [
   { name: 'To-Do List', path: '/todo' },
   { name: '2D Paint', path: '/paint' },
   { name: 'Location Tracker', path: '/location' },
+  { name: 'Chess', path:'/Chess'},
+  { name: 'Snake', path:'/Snake'},
 ];
 
 const FeaturesPage = () => {

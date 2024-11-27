@@ -6,6 +6,8 @@ import LocationTracker from './pages/LocationTracker';
 import Paint from './pages/Paint';
 import Todo from './pages/Todo';
 import TicTacToe from './pages/TicTacToe';
+import Chess from './pages/Chess';
+import SnakeGame from './pages/Snake';
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/paint" element={<Paint />} />
         <Route path="/todo" element={<Todo />} />
         <Route path="/tic-tac-toe" element={<TicTacToe />} />
+        <Route path="/Snake" element={<SnakeGame />} />
+        <Route path="/Chess" element={<Chess />} />
       </Routes>
     </Router>
   );
